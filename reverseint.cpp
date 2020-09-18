@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
     int x;
+    int count = 0;
     cin >> x;
     stack<char> sta;
 
@@ -17,10 +18,19 @@ int main()
         {
             sta.push((s[i]));
         }
+        else
+        {
+            count = 1;
+        }
     }
 
     while(!sta.empty())
     {
+        if (count == 1)
+        {
+            cout << "-";
+            count = 0;
+        }
         cout << sta.top();
         sta.pop();
     }
